@@ -41,7 +41,6 @@ class Sram(numWords: Int, dataWidth: Int, failureMode: FailureMode.Type)
         }
       }
       case FailureMode.Transition => {
-        printf(cf"${io.addr} ${rdwrPort}%x ${io.din}%x\n");
         when(
           io.addr === "hFD".U && io.din === "hDEADBEEF".U && rdwrPort === "hCAFEF00D".U
         ) {
