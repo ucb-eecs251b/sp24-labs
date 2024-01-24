@@ -19,12 +19,14 @@ class Sram(numWords: Int, dataWidth: Int, failureMode: FailureMode.Type)
     val dout = Output(UInt(dataWidth.W))
   })
 
-  val mem = SyncReadMem(
+  val mem = Mem(
     numWords,
     UInt(dataWidth.W)
   )
+  val dout = Reg(UInt(dataWidth.W))
 
-  io.dout := DontCare
+  io.dout := dout
+  dout := DontCare
 
   val rdwrPort = mem(io.addr)
   when(io.we) {
@@ -39,6 +41,7 @@ class Sram(numWords: Int, dataWidth: Int, failureMode: FailureMode.Type)
         }
       }
       case FailureMode.Transition => {
+        printf(cf"${io.addr} ${rdwrPort}%x ${io.din}%x\n");
         when(
           io.addr === "hFD".U && io.din === "hDEADBEEF".U && rdwrPort === "hCAFEF00D".U
         ) {
@@ -49,7 +52,7 @@ class Sram(numWords: Int, dataWidth: Int, failureMode: FailureMode.Type)
       }
     }
   }.otherwise {
-    io.dout := rdwrPort
+    dout := rdwrPort
   }
 }
 
