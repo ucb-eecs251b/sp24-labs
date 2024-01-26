@@ -400,7 +400,7 @@ the following commands from the root directory of the Chipyard repo (this may ta
 ```
 cd tests/
 make
-cd ../sims/verilator
+cd ../sims/vcs
 make CONFIG=SramBistConfig BINARY=../../tests/srambist.riscv run-binary
 ```
 
@@ -410,7 +410,7 @@ make CONFIG=SramBistConfig BINARY=../../tests/srambist.riscv run-binary
 > core. Whenever you make changes, remember to run `make` to recompile the binary.
 
 Your UART output (which can be found by looking at standard output or the generated
-`sims/verilator/output/chipyard.harness.TestHarness.SramBistConfig/srambist.log`) should look like the following if
+`sims/vcs/output/chipyard.harness.TestHarness.SramBistConfig/srambist.log`) should look like the following if
 your SRAM BIST is working correctly:
 
 ```
@@ -435,7 +435,5 @@ You should only need to edit the following files:
 - `generators/srambist`
 - `tests/srambist.c`
 
-Submit your final code by pushing to your GitHub repo and submitting the repo to the Gradescope
-autograder assignment. Your score on the autograder will be your score for the assignment.
-It is recommended that you only submit to the autograder once all of the tests are passing locally.
-
+Submit a screenshot of your log that shows the desired UART output to Gradescope. Make sure that your screenshot includes your terminal prompt
+such that we can see the repo path and activated conda environment, otherwise we will not be able to give credit.
