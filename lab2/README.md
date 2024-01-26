@@ -366,7 +366,7 @@ class SramBistConfig extends Config(
 Fill out the `???` to instantiate your SRAM BIST with the default parameters (i.e. `address = 0x4000`).
 This address defines the base address at which the addresses of MMIO registers for the SRAM BIST begin.
 The offsets we defined in the `regmap` earlier are relative to this address
-(i.e. the EX register will be at 0x4020).
+(i.e. the EX register will be at 0x4010).
 
 > [!TIP]
 > The `WithSramBist` configuration for instantiating your BIST that you defined earlier
