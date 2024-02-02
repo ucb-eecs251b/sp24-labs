@@ -1,7 +1,5 @@
 # Lab 2: Chipyard
 
-## Overview
-
 In this lab, we will integrate the SRAM BIST we designed in [Lab 1](../lab1) into UC Berkeley's [Chipyard](https://github.com/ucb-bar/chipyard) framework.
 
 This lab will only cover a small subset of Chipyards features, so feel free to explore its [documentation](https://chipyard.readthedocs.io/en/latest/) to learn more.
@@ -456,3 +454,5 @@ You should only need to edit the following files:
 
 Submit a screenshot of your log that shows the desired UART output to Gradescope. Make sure that your screenshot includes your terminal prompt
 such that we can see the repo path and activated conda environment, otherwise we will not be able to give credit.
+
+Additionally, make sure to push your latest code to your repo.
