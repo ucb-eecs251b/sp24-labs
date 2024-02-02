@@ -409,8 +409,25 @@ make CONFIG=SramBistConfig BINARY=../../tests/srambist.riscv run-binary
 > will not be reflected in the binary and you will end up running and old version of your code on the Rocket
 > core. Whenever you make changes, remember to run `make` to recompile the binary.
 
+> [!TIP]
+> To produce waveforms for debugging purposes, you can run the following instead from the `sims/vcs` directory:
+>
+> ```
+> make USE_VPD=1 CONFIG=SramBistConfig BINARY=../../tests/srambist.riscv run-binary-debug
+> ```
+> 
+> You can then view the waveform by running DVE:
+>
+> ```
+> dve -vpd output/chipyard.harness.TestHarness.SramBistConfig/srambist.vpd
+> ```
+
+> [!TIP]
+> A common cause for timeout errors is forgetting to check the SRAM data output only a cycle after a read 
+> has been initiated. Trying to validate output on the same cycle as the read will cause undefined behavior.
+
 Your UART output (which can be found by looking at standard output or the generated
-`sims/vcs/output/chipyard.harness.TestHarness.SramBistConfig/srambist.log`) should look like the following if
+`sims/vcs/output/chipyard.harness.TestHarness.SramBistConfig/srambist.log`) should look exactly like the following if
 your SRAM BIST is working correctly:
 
 ```
@@ -419,6 +436,8 @@ SRAM BIST succeeded!
 SRAM BIST failed!
 SRAM BIST succeeded!
 ```
+
+The BIST is expected to catch a fault in the SRAM, causing the second line to print a failure.
 
 ## Conclusion
 
