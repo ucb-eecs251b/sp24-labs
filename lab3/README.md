@@ -1,7 +1,5 @@
 # Lab 3: VLSI flow
 
-## Overview
-
 We will now synthesize, place-and-route, and validate the SoC you designed in Lab 2 using several VLSI tools.
 We will be primarily using Hammer, a Berkeley-developed VLSI flow framework, 
 but we will also see how to interact directly with the tools for more fine-grained control.
@@ -398,3 +396,5 @@ You should not need to modify the starter code beyond the modifications you made
 
 Submit your answers to all of the questions to Gradescope. When taking screenshots, make sure to include
 something that identifies that the screenshot is yours (e.g. a path to your repo or your terminal prompt).
+
+If you have not yet pushed your Lab 2 code to your repo, please do so now.

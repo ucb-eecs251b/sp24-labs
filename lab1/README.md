@@ -92,8 +92,9 @@ To download the starter code, run the following commands on the machine you
 plan on using:
 
 ```
-git clone <your-lab-repo> # i.e. git@github.com:ucb-eecs251b/<semester>-labs-<username>.git
-cd <your-lab-repo>
+# e.g. git clone git@github.com:ucb-eecs251b/sp24-labs-<username>.git chipyard
+git clone <your-lab-repo> chipyard 
+cd chipyard
 # e.g. git remote add skeleton https://github.com/ucb-eecs251b/sp24-labs.git
 git remote add skeleton https://github.com/ucb-eecs251b/<this-repo-name>.git
 git pull skeleton main
