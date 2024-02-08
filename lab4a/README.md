@@ -12,6 +12,7 @@ First, pull the latest changes to the lab Chipyard repository:
 cd /scratch/$USER/chipyard
 source env.sh
 git pull skeleton main
+./scripts/init-vlsi.sh
 ```
 
 ## Decoder VLSI
