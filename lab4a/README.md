@@ -360,7 +360,7 @@ the CLK-Q delay. You will learn more about the setup time during the lecture.
 >
 > **Question 13.** Compare your setup time result to the timing parameters for
 > `sky130_fd_sc_hd__dfxtp_1` in
-> `/home/ff/eecs251b/sky130/sky130A/libs.ref/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`.
+> `/home/ff/eecs251b/sky130/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`.
 > Copy the entire section of the lib (starting at "timing () {}") that
 > corresponds to the setup time and try to guess why it is presented as a look-up
 > table instead of a single value. As a hint, you
