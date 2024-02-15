@@ -1,0 +1,44 @@
+* SKY130 TT corner
+
+.include "../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice"
+.include "../cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice"
+.include "../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice"
+.include "../cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice"
+.include "../cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice"
+.include "../cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice"
+.include "../cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice"
+.include "../cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice"
+.include "../cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice"
+.include "../cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice"
+.include "../cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice"
+.include "../cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice"
+.include "../cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice"
+.include "../cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice"
+.include "corners/tt/nonfet.spice"
+* Mismatch parameters
+.include "../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+.include "../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+.include "../cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice"
+.include "../cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice"
+.include "../cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice"
+.include "../cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "../cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.include "../cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice"
+.include "../cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice"
+* Resistor/Capacitor
+.include "r+c/res_typical__cap_typical.spice"
+.include "r+c/res_typical__cap_typical__lin.spice"
+.include "capacitors/sky130_fd_pr__model__cap_vpp.model.spice"
+* Bipolars
+.include "../cells/npn_05v5/sky130_fd_pr__npn_05v5__t.corner.spice"
+.include "../cells/pnp_05v5/sky130_fd_pr__pnp_05v5_W3p40L3p40.model.spice"
+* Special cells
+.include "corners/tt/specialized_cells.spice"
+* All models
+.include "all.spice"
+* Corner
+.include "corners/tt/rf.spice"
+* 20V MOSFET
+.include "../cells/pfet_20v0/sky130_fd_pr__pfet_20v0__tt_discrete.corner.spice"
+.include "../cells/nfet_20v0/sky130_fd_pr__nfet_20v0__tt_discrete.corner.spice"
+.include "../cells/nfet_20v0_nvt/sky130_fd_pr__nfet_20v0_nvt__tt_discrete.corner.spice"

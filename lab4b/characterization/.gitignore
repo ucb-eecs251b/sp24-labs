@@ -1,0 +1,9 @@
+*.pex.netlist*
+*.log
+*.ldb.gz
+*.lib
+*.ldb
+decoder.sp
+custom_dff.sp
+custom_dff.pex.netlist
+*.lis
