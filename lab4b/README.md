@@ -522,14 +522,14 @@ Finally, in the Virtuoso library, for the `custom_dff_R` cell, there is now an
 > [!IMPORTANT]
 > **Question 12.** Submit a screenshot of the abstract view of the flip-flop, as viewed in Virtuoso.
 
-## Remaining Views
+## Adding an extra library in Hammer
 
-So far, we have learned how to generate the Spice netlist (CDL), LIB, and LEF
-of custom designs. The remaining important views are the Verilog netlist (for
-synthesis and simulation) and the full layout GDS, for merging into the final
-layout.
+Using the views we have created in this lab, we can integrate our custom block
+into Hammer's VLSI flow.
 
 ### Verilog
+
+It is sometimes useful to generate a Verilog model of our block from the netlist.
 
 There are two cases where Verilog is used. The first is for synthesis, which
 are just wrappers and are needed for blackboxes (e.g. SRAMs, analog IP). This
@@ -541,14 +541,7 @@ The second case is for simulation. This Verilog file would describe the
 behavior of the design, and is often hand-written along with your design during
 functional verification.
 
-### GDS
-
-This can be generated from Virtuoso. In the CIW, go to `File` > `Export` >
-`Stream`. Then, select the `layout` view of the cell to export, change the
-Stream File name if desired, and select `asap7_TechLib` as the Technology
-Library. Hit `Translate` and it will generate a GDS file.
-
-### Adding an Extra Library in Hammer
+### Including the views
 
 To ensure that the Hammer flow knows about our new custom cell, we would need
 to append to the list of `vlsi.technology.extra_libraries`.
@@ -564,12 +557,12 @@ for simulation.
 vlsi.technology.extra_libraries_meta: ["append", "deepsubst"]
 vlsi.technology.extra_libraries:
   - library:
-      nldm liberty file_deepsubst_meta: "local"
-      nldm liberty file: "extra_libraries/example/ExampleDCO_PVT_0P63V_100C.lib"
-      lef file_deepsubst_meta: "local"
-      lef file: "extra_libraries/example/ExampleDCO.lef"
-      gds file_deepsubst_meta: "local"
-      gds file: "extra_libraries/example/ExampleDCO.gds"
+      nldm_liberty_file_deepsubst_meta: "local"
+      nldm_liberty_file: "extra_libraries/example/ExampleDCO_PVT_0P63V_100C.lib"
+      lef_file_deepsubst_meta: "local"
+      lef_file: "extra_libraries/example/ExampleDCO.lef"
+      gds_file_deepsubst_meta: "local"
+      gds_file: "extra_libraries/example/ExampleDCO.gds"
       corner:
         nmos: "slow"
         pmos: "slow"
@@ -578,12 +571,12 @@ vlsi.technology.extra_libraries:
         VDD: "0.63 V"
         GND: "0 V"
   - library:
-      nldm liberty file_deepsubst_meta: "local"
-      nldm liberty file: "extra_libraries/example/ExampleDCO_PVT_0P77V_0C.lib"
-      lef file_deepsubst_meta: "local"
-      lef file: "extra_libraries/example/ExampleDCO.lef"
-      gds file_deepsubst_meta: "local"
-      gds file: "extra_libraries/example/ExampleDCO.gds"
+      nldm_liberty_file_deepsubst_meta: "local"
+      nldm_liberty_file: "extra_libraries/example/ExampleDCO_PVT_0P77V_0C.lib"
+      lef_file_deepsubst_meta: "local"
+      lef_file: "extra_libraries/example/ExampleDCO.lef"
+      gds_file_deepsubst_meta: "local"
+      gds_file: "extra_libraries/example/ExampleDCO.gds"
       corner:
         nmos: "fast"
         pmos: "fast"
@@ -607,8 +600,3 @@ explored in depth, such as power, leakage, electromigration, antenna, and more.
 We have also not taken into account process variation in the characterization
 results. These are left for you to explore for your projects or future
 research.
-
-## Acknowledgments
-Thank you to Rahul Kumar who updated the lab for EECS251B SP24.
-Thank you to Erik Anderson who updated the lab for EECS251B in previous semesters.
-This lab was originally written by Harrison Liew, Daniel Grubb, Sean Huang, and Brian Zimmer.
