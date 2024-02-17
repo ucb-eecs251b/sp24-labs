@@ -347,8 +347,8 @@ You can also extend the given testbench to characterize the setup time of your D
 The measurement can be performed by varying the D-CLK time in the testbench. If you start
 with the data launch well before the clock rising edge, CLK-Q delay will only change
 slightly. However, as the data edge draws closer to the clock edge, CLK-Q delay will rapidly increase until the data output can no longer be observed.
-In this lab, we will use the definition of setup time as the D-CLK delay at 1.05 times
-the CLK-Q delay. You will learn more about the setup time during the lecture.
+In this lab, we will use the definition of setup time as the D-CLK delay where the CLK-Q delay is 1.05 times
+the CLK-Q delay for a very large D-CLK delay. You will learn more about the setup time during the lecture.
 
 > [!IMPORTANT]
 > **Question 12.** Modify `dff_testbench.sp` to estimate the setup time of your DFF using only the
