@@ -494,7 +494,7 @@ In the latter file, scroll down to the part that starts with
 > Identify at least 3 differences. Would the LEF you generated allow P&R
 > tools to place your DFF into a `unithd` site?
 > If not, why not? What might we need to change when generating the abstract?
-> Hint: compare the size in your generated LEF to the size declared by the PDK lib,
+> Hint: compare the size in your generated LEF to the size declared by the PDK LEF,
 > and think about what might cause the difference.
 >
 >
