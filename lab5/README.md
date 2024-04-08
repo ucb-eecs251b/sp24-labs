@@ -194,6 +194,8 @@ results are in similar folders appended by the generated SAIF file.
 > preserve the amount of IR drop if the power strap density had to be cut in
 > half. Hint: think floorplan, clocks, etc.
 
+## Vector-based power analysis (optional)
+
 To analyze the power of the `srambist` program, you should change to a slower clock period (e.g. 1ns+) to ensure that the design passes timing. 
 
 > [!IMPORTANT]
